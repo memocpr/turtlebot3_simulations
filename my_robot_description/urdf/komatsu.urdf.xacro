@@ -77,7 +77,7 @@
         </collision>
 
         <xacro:box_inertia
-            m="5000.0"
+            m="500.0"
             x="${rear_box_len}"
             y="${box_w}"
             z="${rbox_h}"
@@ -99,7 +99,7 @@
         </collision>
 
         <xacro:box_inertia
-            m="5000.0"
+            m="500.0"
             x="${front_box_len}"
             y="${box_w}"
             z="${fbox_h}"
