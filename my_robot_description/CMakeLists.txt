@@ -17,8 +17,8 @@ install(
 )
 
 install(
-        PROGRAMS launch/komatsu_view_robot.launch.py
-        DESTINATION share/${PROJECT_NAME}/launch
+        DIRECTORY launch
+        DESTINATION share/${PROJECT_NAME}
 )
 
 ament_package()
