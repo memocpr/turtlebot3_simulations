@@ -107,20 +107,17 @@
             o_rpy="0 0 0"/>
     </link>
 
-    <!-- articulation joints -->
-    <joint name="articulation_to_front" type="revolute">
+    <!-- articulation joints - TEMPORARILY FIXED FOR STABILITY, will be revolute with steering control -->
+    <joint name="articulation_to_front" type="fixed">
         <parent link="articulation_link"/>
         <child link="front_chassis"/>
-        <axis xyz="0 0 1"/>
-        <limit lower="-0.35" upper="0.35" effort="5000" velocity="0.196"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
     </joint>
 
-    <joint name="articulation_to_rear" type="revolute">
+    <joint name="articulation_to_rear" type="fixed">
         <parent link="articulation_link"/>
         <child link="rear_chassis"/>
-        <axis xyz="0 0 1"/>
-        <limit lower="-0.35" upper="0.35" effort="5000" velocity="0.196"/>
-        <mimic joint="articulation_to_front" multiplier="-1"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
     </joint>
 
   <!-- ===== Wheel macro ===== -->
