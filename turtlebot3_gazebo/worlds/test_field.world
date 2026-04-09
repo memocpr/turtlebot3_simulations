@@ -320,6 +320,34 @@
       </link>
       <static>1</static>
     </model>
+    <model name='slam_landmark'>
+      <static>1</static>
+      <pose>0.5 -0.5 0 0 -0 0</pose>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.5 0.5 1.0</size>
+            </box>
+          </geometry>
+          <pose>0 0 0.5 0 -0 0</pose>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0.5 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Orange</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
     <state world_name='default'>
       <sim_time>95 697000000</sim_time>
       <real_time>95 884913018</real_time>
