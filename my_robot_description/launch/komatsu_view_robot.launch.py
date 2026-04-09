@@ -7,7 +7,7 @@ from launch.substitutions import Command
 from ament_index_python.packages import get_package_share_directory
 def generate_launch_description():
     # Get package directories
-    robot_description_dir = get_package_share_directory('robot_description')
+    robot_description_dir = get_package_share_directory('my_robot_description')
     # Path to URDF xacro file
     urdf_file = os.path.join(robot_description_dir, 'urdf', 'komatsu.urdf.xacro')
     # Path to RViz config
