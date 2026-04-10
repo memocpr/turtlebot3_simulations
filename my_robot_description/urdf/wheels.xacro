@@ -39,11 +39,10 @@
     <joint name="${name}_joint" type="continuous">
       <parent link="${parent}"/>
       <child link="${name}"/>
-      <origin xyz="${x} ${y} ${z}" rpy="-1.57079632679 0 0"/>
-      <!-- Keep cylinder along link-Z and rotate the joint frame so wheel axle aligns with parent Y. -->
-      <axis xyz="0 0 1"/>
+      <origin xyz="${x} ${y} ${z}" rpy="0 0 0"/>
+      <!-- Keep wheel link aligned with parent; set wheel axle directly on parent Y. -->
+      <axis xyz="0 1 0"/>
     </joint>
   </xacro:macro>
 
 </robot>
-
