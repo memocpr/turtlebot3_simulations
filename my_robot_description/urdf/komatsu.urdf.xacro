@@ -31,22 +31,16 @@
     <xacro:property name="rbox_h" value="${H_height-F_clearance}"/>
     <xacro:property name="fbox_h" value="${H_height-F_clearance}"/>
 
-    <!-- base footprint -->
+    <!-- base link (physical root / articulation center reference) -->
+    <link name="base_link"/>
+
+    <!-- Ground-projected reference frame (no visual/collision/inertial) -->
     <link name="base_footprint"/>
 
-    <!-- base link (articulation center reference) -->
-    <link name="base_link">
-        <inertial>
-            <mass value="0.01"/>
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
-        </inertial>
-    </link>
-
     <joint name="base_footprint_joint" type="fixed">
-        <parent link="base_footprint"/>
-        <child link="base_link"/>
-        <origin xyz="0 0 ${F_clearance}" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="base_footprint"/>
+        <origin xyz="0 0 ${-F_clearance}" rpy="0 0 0"/>
     </joint>
 
     <!-- articulation center -->
