@@ -17,14 +17,14 @@
   <xacro:macro name="wheel" params="name parent x y z:=0.80 radius:=0.80 width:=0.65">
     <link name="${name}">
       <visual>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
         <geometry>
           <cylinder radius="${radius}" length="${width}"/>
         </geometry>
         <material name="black"/>
       </visual>
       <collision>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
         <geometry>
           <cylinder radius="${radius}" length="${width}"/>
         </geometry>
@@ -39,9 +39,8 @@
     <joint name="${name}_joint" type="continuous">
       <parent link="${parent}"/>
       <child link="${name}"/>
-      <origin xyz="${x} ${y} ${z}" rpy="-1.57079632679 0 0"/>
-      <!-- Keep cylinder along link-Z and rotate the joint frame so wheel axle aligns with parent Y. -->
-      <axis xyz="0 0 1"/>
+      <origin xyz="${x} ${y} ${z}" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
     </joint>
   </xacro:macro>
 
